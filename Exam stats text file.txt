@@ -1,0 +1,143 @@
+//Justin Mattix
+//Exam Statistics
+import java.util.*;
+import java.io.FileReader;
+import java.io.IOException;
+public class Grades
+{
+
+
+	static double gradesMin(int [] Numbers) //finding the minimum value
+	{
+		
+		int [] array = new int [0];
+		int i = 0;
+		int min = 0;
+		
+		for(int j = 0; j< 6 ; j++);
+		{
+			if (array[i] < min){
+				min = array [i];
+			}
+		}
+		return min;
+}
+	
+	
+	
+	static int gradesMax(int [] Numbers) //Finding the maximum grade
+	{
+		int [] array = new int [6];
+		int i = 0;
+		int max = 0;
+		max = 0;
+		
+		for(int j = 0; j<6 ; j++);
+		{
+			if (array[i] > max)
+			{
+				max = array[i];
+			}
+		}
+		return max;
+}
+	
+	static double gradesMean(int [] Numbers) //finding the mean of the grades
+	{
+		int [] array = new int [6];
+		int i = 0; //defining variables
+		int sum = 0;
+		int j;
+		int nbInArray = i;
+		for (int k = 0; i < array[i]; i++);
+		sum = sum + array[i]; //adding the numbers in the array together
+		double mean = sum / array[i]; //taking the sum of the array divided by the number of grades
+		return mean;
+	}
+	
+	
+	
+	
+	static double gradesMedian(int [] grades) //Finding the middle grade
+	{
+		int [] array = new int [6];
+		int[] numArray = new int [6];
+		Arrays.sort(numArray);
+		int middle = numArray.length/2; 
+		int medianValue = 0;
+		if (numArray.length%2 == 1) // if array is even or odd
+			//if array is odd then find the middle number for median
+			medianValue = numArray[middle]; 
+		//if array is even then find the average of the two center number
+			else medianValue = (numArray[middle-1] + numArray [middle]) /2; 
+		return medianValue;
+		}
+
+	static int [] gradesDistribution(int [] grades) //Finding the distributrion of grades
+	{
+		int [] array = new int[6];
+		Scanner cin = new Scanner (System.in);
+		int i= cin.nextInt();
+		int A = 0;
+		int B = 0;
+		int C = 0;
+		int D = 0;
+		int F = 0;
+		if (90 < i < 100)
+		{
+		A++;
+		}
+		if else (80 < i < 89) 
+		{
+		B++;
+		}
+		if else (70 < i < 79)
+		{
+		C++;
+		}
+		if else (60 < i < 69) 
+		{
+		D++;
+		}
+		else (i < 59)
+		{
+		F++;
+		return
+		}
+
+	}
+
+	
+	static void printGradesInfo(int [] grades)
+	{
+		System.out.println("The best grade in the class is" + gradesMax(grades));
+		System.out.println("The lowest grade in the class is" + gradesMin(grades));
+		System.out.println("The Mean of the grades is" + gradesMean(grades));
+		System.out.println("The Median grade is" + gradesMedian(grades));
+	}	
+	
+	public static void main(String[] args) throws IOException
+	{
+		Scanner fin = new Scanner(new FileReader("C:\\Users\\csam\\eclipse-workspace\\Exam_Statistics\\src\\Numbers"));
+		System.out.println("What is the file you want sorted?");
+		int[] x = new int [6];
+		
+		{
+			for(int i=0; i < 6; i++)
+			{
+				x[i] = fin.nextInt();
+			}
+			Arrays.sort(x);
+			printGradesInfo(x);
+			fin.close();
+		}
+	}
+}
+
+Terminal
+What is the file you want sorted?
+The best grade in the class is0
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 0
+	at Grades.gradesMin(Grades.java:19)
+	at Grades.printGradesInfo(Grades.java:114)
+	at Grades.main(Grades.java:131)
